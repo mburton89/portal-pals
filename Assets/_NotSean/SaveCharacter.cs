@@ -32,4 +32,54 @@ public class SaveCharacter : MonoBehaviour
             PlayerPrefs.SetInt("Aaron", 0);
         }
     }
+
+    private void OnEnable()
+    {
+        Dean.onClick.AddListener(HandleDeanPressed);
+    }
+
+    void HandleDeanPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 0);
+    }
+
+    void HandleMaddiePressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 1);
+    }
+
+    void HandleLaynePressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 2);
+    }
+
+    void HandleAustanPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 3);
+    }
+
+    void HandleBeckPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 4);
+    }
+
+    void HandleLiamPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 5);
+    }
+
+    void HandleMattPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 6);
+    }
+
+    void HandleSeanPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 7);
+    }
+
+    void HandleAaronPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 8);
+    }
 }
