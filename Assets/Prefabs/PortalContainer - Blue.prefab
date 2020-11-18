@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 2079754256355840723}
   - component: {fileID: 1061503014}
   m_Layer: 0
-  m_Name: Portal - Blue
+  m_Name: PortalContainer - Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 3248240395385948119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -45.037174, y: 1.229, z: 23.009272}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 5576499634576179797}
   - {fileID: 2467071990921209529}
@@ -389,7 +389,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7177163168837699622}
   - component: {fileID: 9017514029025156591}
-  - component: {fileID: 4120950119206414068}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -454,11 +453,3 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4120950119206414068
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310927684016702178}
-  m_Enabled: 1

@@ -91,7 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2330238572387492486}
   - component: {fileID: 4532988993656207183}
-  - component: {fileID: 8862030795206921300}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -156,14 +155,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8862030795206921300
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2790382102529828930}
-  m_Enabled: 1
 --- !u!1 &6866574043566953183
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,8 +404,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7987377122749099387}
   - component: {fileID: 6849985172552890483}
+  - component: {fileID: 6008450272542166147}
   m_Layer: 0
-  m_Name: Portal - Orange
+  m_Name: PortalContainer - Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +421,7 @@ Transform:
   m_GameObject: {fileID: 7987377122749099383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -43.735, y: 1.229, z: 23.009272}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 5822103587002810379}
   - {fileID: 7057141325005311001}
@@ -448,3 +440,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db712cf492faf4ac7b6ee36e535f169f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6008450272542166147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7987377122749099383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cabe3e708e4954b59b61a124112b4cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedPortal: {fileID: 0}

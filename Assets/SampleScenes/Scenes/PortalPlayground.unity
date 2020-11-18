@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: a7bed68887a07e34394d4191b3081359, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.059197478, g: 0.09097939, b: 0.12692305, a: 1}
+  m_IndirectSpecularColor: {r: 0.059197664, g: 0.090979695, b: 0.12692362, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -2308,13 +2308,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3248240395385948123, guid: f3793cbf2ed9249db9746a0220e8ee60,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4120950119206414068, guid: f3793cbf2ed9249db9746a0220e8ee60, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3793cbf2ed9249db9746a0220e8ee60, type: 3}
 --- !u!1 &3248240396446762995 stripped
 GameObject:
@@ -2414,6 +2408,11 @@ PrefabInstance:
       propertyPath: linkedPortal
       value: 
       objectReference: {fileID: 3248240396446762995}
+    - target: {fileID: 6008450272542166147, guid: 2f52525e5f1420943b787d5d9ead9faa,
+        type: 3}
+      propertyPath: linkedPortal
+      value: 
+      objectReference: {fileID: 1061503013}
     - target: {fileID: 7987377122749099383, guid: 2f52525e5f1420943b787d5d9ead9faa,
         type: 3}
       propertyPath: m_Name
@@ -2474,13 +2473,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7987377122749099387, guid: 2f52525e5f1420943b787d5d9ead9faa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8862030795206921300, guid: 2f52525e5f1420943b787d5d9ead9faa, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52525e5f1420943b787d5d9ead9faa, type: 3}
 --- !u!1 &4448026585059238390 stripped
 GameObject:
@@ -2494,16 +2487,3 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4448026585059238389}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6008450272542166147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008450272542166146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cabe3e708e4954b59b61a124112b4cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  linkedPortal: {fileID: 1061503013}
