@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4c3a9139dad58184d8a3335595cf2ff4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Haettenschweiler
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bef494be18ac70f4a944cded6aed96d6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
