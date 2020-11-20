@@ -13,7 +13,7 @@ public class Portal : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
     {
-		if (portalActive)
+		if (portalActive && !other.GetComponent<ObjectGrabber>())
         {
 			// disable portals to prevent infinite portal loop
 			linkedPortal.GetComponent<Portal>().Activate(false);
