@@ -30,7 +30,10 @@ public class PortalGun : MonoBehaviour
         RaycastHit raycastHit;
 
         // if we collide with an object with our raycast, spawn a portal there
-        if (Physics.Raycast(firingPoint.transform.position, transform.TransformDirection(Vector3.forward), out raycastHit, Mathf.Infinity))
+        if (Physics.Raycast(firingPoint.transform.position, transform.TransformDirection(Vector3.forward), out raycastHit, Mathf.Infinity)
+       && raycastHit.collider.gameObject.name != "OrangePortal" && raycastHit.collider.gameObject.name != "BluePortal"
+       && raycastHit.collider.gameObject.GetComponent<Rigidbody>() == null
+       && raycastHit.collider.gameObject.tag != "noportal")
         {
             portalSound.Play();
 
