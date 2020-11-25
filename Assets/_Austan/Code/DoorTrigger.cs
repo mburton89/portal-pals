@@ -15,6 +15,16 @@ public class DoorTrigger : MonoBehaviour
         {
             isOpened = true;
             door.transform.position += new Vector3(0, 4, 0);
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (isOpened == true)
+        {
+            isOpened = false;
+            door.transform.position -= new Vector3(0, 4, 0);
         }
     }
 }
