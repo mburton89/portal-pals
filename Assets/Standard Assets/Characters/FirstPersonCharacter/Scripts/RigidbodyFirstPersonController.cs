@@ -179,6 +179,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.AddForce((desiredMove * SlopeMultiplier()) * .4f, ForceMode.Impulse);
                 }
+    
+                //Caps out max speed
+                if (m_RigidBody.velocity.magnitude > (movementSettings.CurrentTargetSpeed))
+                {
+                    m_RigidBody.velocity = m_RigidBody.velocity.normalized * (movementSettings.CurrentTargetSpeed);
+                }
             }
 
 
