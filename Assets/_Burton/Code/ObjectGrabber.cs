@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectGrabber : MonoBehaviour
 {
-    [SerializeField] private KeyCode _grabKey;
+    //[SerializeField] private KeyCode  _grabKey;
     private Collider _collider;
     private GrabbableObject _potentialObject;
     private GrabbableObject _grabbedObject;
@@ -25,7 +25,7 @@ public class ObjectGrabber : MonoBehaviour
             _collider.enabled = true;
         }
 
-        if (Input.GetKeyDown(_grabKey))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (_potentialObject != null)
             {
@@ -34,7 +34,7 @@ public class ObjectGrabber : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyUp(_grabKey))
+        else if (Input.GetKeyUp(KeyCode.E))
         {
             if (_grabbedObject != null)
             {
