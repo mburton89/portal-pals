@@ -17,8 +17,8 @@ public class DoorTrigger : MonoBehaviour
     private void Awake()
     {
         _initialYPosition = door.transform.position.y;
-        _doorMoveDistance = 5;
-        _doorMoveDuration = 1;
+        _doorMoveDistance = 2.2f;
+        _doorMoveDuration = 0.5f;
     }
 
     void OnTriggerEnter(Collider col)
@@ -26,7 +26,7 @@ public class DoorTrigger : MonoBehaviour
         if (isOpened == false)
         {
             isOpened = true;
-            door.transform.DOMoveY(_doorMoveDistance, _doorMoveDuration);
+            door.transform.DOMoveY(_initialYPosition + _doorMoveDistance, _doorMoveDuration);
         }
     }
 
@@ -35,8 +35,6 @@ public class DoorTrigger : MonoBehaviour
         if (isOpened == true)
         {
             isOpened = false;
-            //door.transform.position -= new Vector3(0, 4, 0);
-
             door.transform.DOMoveY(_initialYPosition, _doorMoveDuration);
         }
     }
