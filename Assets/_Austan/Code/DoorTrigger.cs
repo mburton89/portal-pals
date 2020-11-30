@@ -14,8 +14,11 @@ public class DoorTrigger : MonoBehaviour
 
     bool isOpened = false;
 
+    private List<GameObject> objectsOnTrigger;
+
     private void Awake()
     {
+        objectsOnTrigger = new List<GameObject>();
         _initialYPosition = door.transform.position.y;
         _doorMoveDistance = 2.2f;
         _doorMoveDuration = 0.5f;
@@ -23,6 +26,8 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+        objectsOnTrigger.Add(col.gameObject);
+
         if (isOpened == false)
         {
             isOpened = true;
@@ -32,7 +37,9 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (isOpened == true)
+        objectsOnTrigger.Remove(other.gameObject);
+
+        if (isOpened == true && objectsOnTrigger.Count <= 0)
         {
             isOpened = false;
             door.transform.DOMoveY(_initialYPosition, _doorMoveDuration);

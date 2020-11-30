@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjectGrabber : MonoBehaviour
 {
-    //[SerializeField] private KeyCode  _grabKey;
     private Collider _collider;
     private GrabbableObject _potentialObject;
     private GrabbableObject _grabbedObject;
