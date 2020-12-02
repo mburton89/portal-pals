@@ -36,6 +36,14 @@ public class SaveCharacter : MonoBehaviour
     private void OnEnable()
     {
         Dean.onClick.AddListener(HandleDeanPressed);
+        Maddie.onClick.AddListener(HandleMaddiePressed);
+        Layne.onClick.AddListener(HandleLaynePressed);
+        Austan.onClick.AddListener(HandleAustanPressed);
+        Beck.onClick.AddListener(HandleBeckPressed);
+        Liam.onClick.AddListener(HandleLiamPressed);
+        Matt.onClick.AddListener(HandleMattPressed);
+        Sean.onClick.AddListener(HandleSeanPressed);
+        Aaron.onClick.AddListener(HandleAaronPressed);
     }
 
     void HandleDeanPressed()
