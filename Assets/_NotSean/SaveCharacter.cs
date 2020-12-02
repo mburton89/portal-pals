@@ -30,6 +30,7 @@ public class SaveCharacter : MonoBehaviour
             PlayerPrefs.SetInt("Matt", 0);
             PlayerPrefs.SetInt("Sean", 0);
             PlayerPrefs.SetInt("Aaron", 0);
+            PlayerPrefs.SetInt("MallowBoi", 0);
         }
     }
 
@@ -81,5 +82,10 @@ public class SaveCharacter : MonoBehaviour
     void HandleAaronPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 8);
+    }
+
+    void HandleMallowBoiPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 9);
     }
 }
