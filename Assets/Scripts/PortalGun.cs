@@ -10,10 +10,9 @@ public class PortalGun : MonoBehaviour
     public GameObject bluePortal;
     public GameObject firingPoint;
 
-    // Update is called once per frame
     void Update()
     {
-        // fire the right portal (left or right) based on input
+        // fire the portal (left or right) based on input
         if (Input.GetMouseButtonDown(0))
         {
             FirePortal(false);
@@ -22,6 +21,8 @@ public class PortalGun : MonoBehaviour
         {
             FirePortal(true);
         }
+
+
     }
 
     void FirePortal(bool isOrange)
@@ -34,7 +35,7 @@ public class PortalGun : MonoBehaviour
             && raycastHit.collider.gameObject.name != "OrangePortal" && raycastHit.collider.gameObject.name != "BluePortal"
             && raycastHit.collider.gameObject.GetComponent<Rigidbody>() == null
             && raycastHit.collider.gameObject.tag != "noportal")
-        {
+        { 
             portalSound.Play();
 
             // choose between the correct portals based on bool input
