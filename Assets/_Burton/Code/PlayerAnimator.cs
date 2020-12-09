@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -33,14 +34,23 @@ public class PlayerAnimator : MonoBehaviour
         characterSpriteLists.Add(MattSprites);
         characterSpriteLists.Add(SeanSprites);
         characterSpriteLists.Add(AaronSprites);
-        currentSpriteList = characterSpriteLists[PlayerPrefs.GetInt("PlayerIndex")];
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            currentSpriteList = characterSpriteLists[Random.Range(0, characterSpriteLists.Count)];
+        }
+        else
+        {
+            currentSpriteList = characterSpriteLists[PlayerPrefs.GetInt("PlayerIndex")];
+        }
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(Animate());
     }
 
     private IEnumerator Animate()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < currentSpriteList.Count; i++)
         {
             _spriteRenderer.sprite = currentSpriteList[i];
             yield return new WaitForSeconds(_frameRate);

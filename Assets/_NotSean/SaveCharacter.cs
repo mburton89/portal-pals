@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SaveCharacter : MonoBehaviour
 {
@@ -21,15 +19,6 @@ public class SaveCharacter : MonoBehaviour
         if (PlayerPrefs.GetInt("hasStartedGame") != 1)
         {
             PlayerPrefs.SetInt("hasStartedGame", 1);
-            PlayerPrefs.SetInt("Dean", 0);
-            PlayerPrefs.SetInt("Maddie", 0);
-            PlayerPrefs.SetInt("Layne", 0);
-            PlayerPrefs.SetInt("Austan", 0);
-            PlayerPrefs.SetInt("Beck", 0);
-            PlayerPrefs.SetInt("Liam", 0);
-            PlayerPrefs.SetInt("Matt", 0);
-            PlayerPrefs.SetInt("Sean", 0);
-            PlayerPrefs.SetInt("Aaron", 0);
         }
     }
 
@@ -49,45 +38,59 @@ public class SaveCharacter : MonoBehaviour
     void HandleDeanPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 0);
+        LoadNextScene();
     }
 
     void HandleMaddiePressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 1);
+        LoadNextScene();
     }
 
     void HandleLaynePressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 2);
+        LoadNextScene();
     }
 
     void HandleAustanPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 3);
+        LoadNextScene();
     }
 
     void HandleBeckPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 4);
+        LoadNextScene();
     }
 
     void HandleLiamPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 5);
+        LoadNextScene();
     }
 
     void HandleMattPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 6);
+        LoadNextScene();
     }
 
     void HandleSeanPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 7);
+        LoadNextScene();
     }
 
     void HandleAaronPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 8);
+        LoadNextScene();
+    }
+
+    void LoadNextScene()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetInt("levelToLoad"));
     }
 }
