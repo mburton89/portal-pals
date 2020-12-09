@@ -21,8 +21,11 @@ public class PlayerAnimator : MonoBehaviour
 
     [SerializeField] private float _frameRate;
 
+    [SerializeField] private GameObject _mallowBoy;
+
     void Start()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         characterSpriteLists = new List<List<Sprite>>();
         currentSpriteList = new List<Sprite>();
         characterSpriteLists.Add(DeanSprites);
@@ -41,11 +44,17 @@ public class PlayerAnimator : MonoBehaviour
         }
         else
         {
-            currentSpriteList = characterSpriteLists[PlayerPrefs.GetInt("PlayerIndex")];
+            if (PlayerPrefs.GetInt("PlayerIndex") < 9)
+            {
+                currentSpriteList = characterSpriteLists[PlayerPrefs.GetInt("PlayerIndex")];
+                StartCoroutine(Animate());
+            }
+            else
+            {
+                _spriteRenderer.enabled = false;
+                _mallowBoy.SetActive(true);
+            }
         }
-
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        StartCoroutine(Animate());
     }
 
     private IEnumerator Animate()

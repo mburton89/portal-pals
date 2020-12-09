@@ -13,6 +13,7 @@ public class SaveCharacter : MonoBehaviour
     public Button Matt;
     public Button Sean;
     public Button Aaron;
+    public Button Mallow;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class SaveCharacter : MonoBehaviour
         Matt.onClick.AddListener(HandleMattPressed);
         Sean.onClick.AddListener(HandleSeanPressed);
         Aaron.onClick.AddListener(HandleAaronPressed);
+        Mallow.onClick.AddListener(HandleMallowPressed);
     }
 
     void HandleDeanPressed()
@@ -86,6 +88,12 @@ public class SaveCharacter : MonoBehaviour
     void HandleAaronPressed()
     {
         PlayerPrefs.SetInt("PlayerIndex", 8);
+        LoadNextScene();
+    }
+
+    void HandleMallowPressed()
+    {
+        PlayerPrefs.SetInt("PlayerIndex", 9);
         LoadNextScene();
     }
 
