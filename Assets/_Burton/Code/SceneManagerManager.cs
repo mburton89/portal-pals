@@ -12,7 +12,7 @@ public class SceneManagerManager : MonoBehaviour
     void Awake()
     {
         _player = FindObjectOfType<RigidbodyFirstPersonController>().transform;
-        _minY = -5f;
+        _minY = -50f;
     }
 
     void Start()
