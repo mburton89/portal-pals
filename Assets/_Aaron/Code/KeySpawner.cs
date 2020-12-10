@@ -12,6 +12,15 @@ public class KeySpawner : MonoBehaviour
         if (other.tag == "Ball")
         {
             Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
+            Instantiate(key, spawnpoint.position, spawnpoint.rotation, spawnpoint);
             print("BallGetCar");
         }
     }
