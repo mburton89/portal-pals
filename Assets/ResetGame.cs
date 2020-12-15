@@ -10,7 +10,7 @@ public class ResetGame : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.M))
         {
             SceneManager.LoadScene(0);
         }
