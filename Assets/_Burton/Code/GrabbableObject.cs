@@ -18,10 +18,10 @@ public class GrabbableObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Portal>())
-        {
-            LetGo();
-        }
+        //if (other.GetComponent<Portal>())
+        //{
+        //    LetGo();
+        //}
     }
 
     public void Grab(ObjectGrabber controller)
@@ -47,6 +47,6 @@ public class GrabbableObject : MonoBehaviour
     public void Fling()
     {
         LetGo();
-        _rb.AddForce((_currentPosition - _previousPosition) * 2000);
+        _rb.AddForce((_currentPosition - _previousPosition) * 800);
     }
 }

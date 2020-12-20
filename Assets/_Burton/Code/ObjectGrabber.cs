@@ -8,6 +8,8 @@ public class ObjectGrabber : MonoBehaviour
     private GrabbableObject _potentialObject;
     private GrabbableObject _grabbedObject;
 
+    [SerializeField] private HoldButton _holdButton;
+
     void Awake()
     {
         _collider = GetComponent<Collider>();
@@ -26,21 +28,43 @@ public class ObjectGrabber : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (_potentialObject != null)
-            {
-                _grabbedObject = _potentialObject;
-                _grabbedObject.Grab(this);
-            }
+            TryGrabObject();
         }
 
         else if (Input.GetKeyUp(KeyCode.E))
         {
-            if (_grabbedObject != null)
-            {
-                _grabbedObject.Fling();
-            }
-            Reset();
+            TryLetGoOfObject();
         }
+    }
+
+    private void OnEnable()
+    {
+        _holdButton.onPointerDown.AddListener(TryGrabObject);
+        _holdButton.onPointerUp.AddListener(TryLetGoOfObject);
+    }
+
+    private void OnDisable()
+    {
+        _holdButton.onPointerDown.RemoveListener(TryGrabObject);
+        _holdButton.onPointerUp.RemoveListener(TryLetGoOfObject);
+    }
+
+    void TryGrabObject()
+    {
+        if (_potentialObject != null)
+        {
+            _grabbedObject = _potentialObject;
+            _grabbedObject.Grab(this);
+        }
+    }
+
+    void TryLetGoOfObject()
+    {
+        if (_grabbedObject != null)
+        {
+            _grabbedObject.Fling();
+        }
+        Reset();
     }
 
     private void OnTriggerEnter(Collider other)
