@@ -10,7 +10,7 @@ public class PortalGun : MonoBehaviour
     public GameObject bluePortal;
     public GameObject firingPoint;
 
-    void Update()
+    void LateUpdate()
     {
         // fire the portal (left or right) based on input
         if (Input.GetMouseButtonDown(0))

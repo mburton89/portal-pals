@@ -41,6 +41,7 @@ public class PlayerAnimator : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             currentSpriteList = characterSpriteLists[Random.Range(0, characterSpriteLists.Count)];
+            StartCoroutine(Animate());
         }
         else
         {
