@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabbableObject : MonoBehaviour
 {
     private ObjectGrabber _controller;
+    private ObjectThrower _throwController;
     private Rigidbody _rb;
 
     private Vector3 _previousPosition;
@@ -34,11 +35,32 @@ public class GrabbableObject : MonoBehaviour
         transform.localEulerAngles = Vector3.zero;
     }
 
+    public void Grab(ObjectThrower controller)
+    {
+        _throwController = controller;
+        _rb = GetComponent<Rigidbody>();
+        _rb.isKinematic = true;
+        if (_controller != null)
+        {
+            transform.SetParent(_controller.transform);
+        }
+        if (_throwController != null)
+        {
+            transform.SetParent(_throwController.transform);
+        }
+        transform.localPosition = Vector3.zero;
+        transform.localEulerAngles = Vector3.zero;
+    }
+
     public void LetGo()
     {
         if (_controller != null)
         {
             _controller.Reset();
+        }
+        if (_throwController != null)
+        {
+            _throwController.Reset();
         }
         _rb.isKinematic = false;
         _rb.transform.SetParent(null);

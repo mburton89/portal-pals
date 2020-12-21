@@ -21,8 +21,6 @@ public class PortalGun : MonoBehaviour
         {
             FirePortal(true);
         }
-
-
     }
 
     void FirePortal(bool isOrange)
