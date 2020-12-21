@@ -7,6 +7,7 @@ public class LevelSelectNew : MonoBehaviour
     [SerializeField] private Button _level2;
     [SerializeField] private Button _level3;
     [SerializeField] private Button _level4;
+    [SerializeField] private Button _boxChucker;
     [SerializeField] private Button _back;
 
     [SerializeField] private GameObject _container;
@@ -19,6 +20,7 @@ public class LevelSelectNew : MonoBehaviour
         _level2.onClick.AddListener(HandleLevel2Pressed);
         _level3.onClick.AddListener(HandleLevel3Pressed);
         _level4.onClick.AddListener(HandleLevel4Pressed);
+        _boxChucker.onClick.AddListener(HandleBoxChuckerPressed);
         _back.onClick.AddListener(HandleBackPressed);
     }
 
@@ -43,6 +45,12 @@ public class LevelSelectNew : MonoBehaviour
     void HandleLevel4Pressed()
     {
         PlayerPrefs.SetInt("levelToLoad", 4);
+        ShowCharacterSelect();
+    }
+
+    void HandleBoxChuckerPressed()
+    {
+        PlayerPrefs.SetInt("levelToLoad", 5);
         ShowCharacterSelect();
     }
 

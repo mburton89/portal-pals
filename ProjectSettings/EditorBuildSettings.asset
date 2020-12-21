@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Aaron/Scenes/AaronS.unity
     guid: 5131d1cd3f867634cb350f8215d435af
+  - enabled: 1
+    path: Assets/_Burton/Scenes/BoxChucker.unity
+    guid: 8fb4fbe31c29b5345b83123aaeb56e5e
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 28e01d9cf78fa438f908e66784513be1,
       type: 2}

@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void QuitGame()
     {
         //Debug.Log("Quit");
