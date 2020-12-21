@@ -24,6 +24,10 @@ EditorBuildSettings:
     path: Assets/_Burton/Scenes/BoxChucker.unity
     guid: 8fb4fbe31c29b5345b83123aaeb56e5e
   m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: ec4d59463e5d37f4c9985683a48a7ec7,
+      type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 05af0bb3b350e60459001eaae2742346,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 28e01d9cf78fa438f908e66784513be1,
       type: 2}
     xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 9877f8f224782455bb401535f66b9ffa,
