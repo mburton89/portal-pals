@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityStandardAssets.Characters.FirstPerson;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SceneManagerManager : MonoBehaviour
 {
@@ -11,8 +11,8 @@ public class SceneManagerManager : MonoBehaviour
 
     void Awake()
     {
-        //_player = FindObjectOfType<RigidbodyFirstPersonController>().transform;
-        _minY = -5f;
+        _player = FindObjectOfType<RigidbodyFirstPersonController>().transform;
+        _minY = -50f;
     }
 
     void Start()
@@ -22,17 +22,17 @@ public class SceneManagerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.GetComponent<RigidbodyFirstPersonController>())
-        //{
+        if (other.GetComponent<RigidbodyFirstPersonController>())
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //}
+        }
     }
 
     void CheckPlayerBoundaries()
     {
-        //if (_player.transform.position.y < _minY)
-        //{
+        if (_player.transform.position.y < _minY)
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //}
+        }
     }
 }
