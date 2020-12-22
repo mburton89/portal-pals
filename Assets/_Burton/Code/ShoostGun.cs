@@ -15,10 +15,10 @@ public class ShoostGun : MonoBehaviour
 
     void LateUpdate()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Shoost();
-        //}
+        if (Input.GetMouseButtonDown(1))
+        {
+            Shoost();
+        }
     }
 
     void Shoost()
