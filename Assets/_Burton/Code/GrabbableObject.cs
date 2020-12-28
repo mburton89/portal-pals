@@ -69,6 +69,6 @@ public class GrabbableObject : MonoBehaviour
     public void Fling()
     {
         LetGo();
-        _rb.AddForce((_currentPosition - _previousPosition) * 2000);
+        _rb.AddForce((_currentPosition - _previousPosition) * 4000);
     }
 }

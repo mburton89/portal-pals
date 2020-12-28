@@ -17,9 +17,9 @@ public class Explodable : MonoBehaviour
             Explode();
         }
 
-        if (collision.gameObject.GetComponent<Explodable>())
-        {
-            collision.gameObject.GetComponent<Explodable>().Explode();
-        }
+        //if (collision.gameObject.GetComponent<Explodable>())
+        //{
+        //    collision.gameObject.GetComponent<Explodable>().Explode();
+        //}
     }
 }
