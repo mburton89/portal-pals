@@ -54,6 +54,11 @@ public class GrabbableObject : MonoBehaviour
 
     public void LetGo()
     {
+        if (GetComponent<Bag>())
+        {
+            GetComponent<Bag>().Throw();
+        }
+
         if (_controller != null)
         {
             _controller.Reset();

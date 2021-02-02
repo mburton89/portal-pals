@@ -7,6 +7,9 @@ TagManager:
   - Ball
   - noportal
   - projectile
+  - OnePoint
+  - ThreePoints
+  - NoPoints
   layers:
   - Default
   - TransparentFX
