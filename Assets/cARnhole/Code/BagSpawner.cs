@@ -6,10 +6,19 @@ public class BagSpawner : MonoBehaviour
 {
     public static BagSpawner Instance;
 
-    public Transform p1BagSpawnPoint;
-    public Transform p2BagSpawnPoint;
     public Bag _p1BagPrefab;
     public Bag _p2BagPrefab;
+
+    public Transform p1Bag1SpawnPoint;
+    public Transform p1Bag2SpawnPoint;
+    public Transform p1Bag3SpawnPoint;
+    public Transform p1Bag4SpawnPoint;
+
+    public Transform p2Bag1SpawnPoint;
+    public Transform p2Bag2SpawnPoint;
+    public Transform p2Bag3SpawnPoint;
+    public Transform p2Bag4SpawnPoint;
+
 
     void Awake()
     {
@@ -18,16 +27,28 @@ public class BagSpawner : MonoBehaviour
 
     public void SpawnBags()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            Bag bag = Instantiate(_p1BagPrefab, p1BagSpawnPoint.position, p1BagSpawnPoint.rotation, null) as Bag;
-            bag.isPlayer1 = true;
-        }
+        Bag p1b1 = Instantiate(_p1BagPrefab, p1Bag1SpawnPoint.position, p1Bag1SpawnPoint.rotation, null) as Bag;
+        p1b1.isPlayer1 = true;
 
-        for (int i = 0; i < 4; i++)
-        {
-            Bag bag = Instantiate(_p2BagPrefab, p2BagSpawnPoint.position, p2BagSpawnPoint.rotation, null) as Bag;
-            bag.isPlayer1 = false;
-        }
+        Bag p1b2 = Instantiate(_p1BagPrefab, p1Bag2SpawnPoint.position, p1Bag2SpawnPoint.rotation, null) as Bag;
+        p1b1.isPlayer1 = true;
+
+        Bag p1b3 = Instantiate(_p1BagPrefab, p1Bag3SpawnPoint.position, p1Bag3SpawnPoint.rotation, null) as Bag;
+        p1b1.isPlayer1 = true;
+
+        Bag p1b4 = Instantiate(_p1BagPrefab, p1Bag4SpawnPoint.position, p1Bag4SpawnPoint.rotation, null) as Bag;
+        p1b1.isPlayer1 = true;
+
+        Bag p2b1 = Instantiate(_p2BagPrefab, p2Bag1SpawnPoint.position, p2Bag1SpawnPoint.rotation, null) as Bag;
+        p1b1.isPlayer1 = true;
+
+        Bag p2b2 = Instantiate(_p2BagPrefab, p2Bag2SpawnPoint.position, p2Bag2SpawnPoint.rotation, null) as Bag;
+        p1b1.isPlayer1 = true;
+
+        Bag p2b3 = Instantiate(_p2BagPrefab, p2Bag3SpawnPoint.position, p2Bag3SpawnPoint.rotation, null) as Bag;
+        p1b1.isPlayer1 = true;
+
+        Bag p2b4 = Instantiate(_p2BagPrefab, p2Bag4SpawnPoint.position, p2Bag4SpawnPoint.rotation, null) as Bag;
+        p1b1.isPlayer1 = true;
     }
 }

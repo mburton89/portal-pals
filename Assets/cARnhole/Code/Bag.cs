@@ -20,7 +20,7 @@ public class Bag : MonoBehaviour
         _gavePointsToPlayer = false;
         _pointsToGive = 0;
         _rigidbody = GetComponent<Rigidbody>();
-        InvokeRepeating(nameof(CheckMomentum), 0, 1);
+        InvokeRepeating(nameof(CheckMomentum), 0, 1f);
     }
 
     public void Throw()
@@ -61,6 +61,10 @@ public class Bag : MonoBehaviour
                     CarnholeManager.Instance.AwardPointsForRound(isPlayer1, -1, false);
                 }
             }
+        }
+        else if (collision.gameObject.CompareTag("ResetThrow"))
+        {
+            //TODO
         }
     }
 

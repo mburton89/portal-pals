@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class CarnholeManager : MonoBehaviour
@@ -24,6 +25,9 @@ public class CarnholeManager : MonoBehaviour
     public TextMeshProUGUI p1TotalScoreText;
     public TextMeshProUGUI p2TotalScoreText;
 
+    public Button nextRoundButton;
+    public Button newGameButton;
+
     void Awake()
     {
         Instance = this;
@@ -31,7 +35,19 @@ public class CarnholeManager : MonoBehaviour
 
     void Start()
     {
-        Reset();
+        StartNewGame();
+    }
+
+    private void OnEnable()
+    {
+        nextRoundButton.onClick.AddListener(CompleteRound);
+        newGameButton.onClick.AddListener(StartNewGame);
+    }
+
+    private void OnDisable()
+    {
+        nextRoundButton.onClick.RemoveListener(CompleteRound);
+        newGameButton.onClick.RemoveListener(StartNewGame);
     }
 
     public void AwardPointsForRound(bool isPlayer1, int pointsToAward, bool goToNextPlayer)
@@ -112,45 +128,53 @@ public class CarnholeManager : MonoBehaviour
         }
         else
         {
-            CompleteRound();
+            ShowEndOfRoundUI();
             _turnsCompletedInRounds = 0;
         }
     }
 
-    public void CompleteRound()
+    public void ShowEndOfRoundUI()
     {
         if (p1TotalScore >= 21)
         {
             print("P1 WINS");
+            newGameButton.gameObject.SetActive(true);
         }
         else if (p2TotalScore >= 21)
         {
+            newGameButton.gameObject.SetActive(true);
             print("P2 WINS");
         }
         else
         {
-            if (p1RoundScore > p2RoundScore)
-            {
-                player1GoesFirst = true;
-                isPlayerOnesTurn = true;
-            }
-            else if (p1RoundScore < p2RoundScore)
-            {
-                player1GoesFirst = false;
-                isPlayerOnesTurn = false;
-            }
-            p1TotalScore += p1RoundScore;
-            p2TotalScore += p2RoundScore;
-            p1RoundScore = 0;
-            p2RoundScore = 0;
-            UpdateUI();
-            Bag[] currentBags = FindObjectsOfType<Bag>();
-            foreach (Bag bag in currentBags)
-            {
-                Destroy(bag.gameObject);
-            }
-            BagSpawner.Instance.SpawnBags();
+            nextRoundButton.gameObject.SetActive(true);
         }
+    }
+
+    void CompleteRound()
+    {
+        if (p1RoundScore > p2RoundScore)
+        {
+            player1GoesFirst = true;
+            isPlayerOnesTurn = true;
+        }
+        else if (p1RoundScore < p2RoundScore)
+        {
+            player1GoesFirst = false;
+            isPlayerOnesTurn = false;
+        }
+        p1TotalScore += p1RoundScore;
+        p2TotalScore += p2RoundScore;
+        p1RoundScore = 0;
+        p2RoundScore = 0;
+        UpdateUI();
+        Bag[] currentBags = FindObjectsOfType<Bag>();
+        foreach (Bag bag in currentBags)
+        {
+            Destroy(bag.gameObject);
+        }
+        BagSpawner.Instance.SpawnBags();
+        nextRoundButton.gameObject.SetActive(false);
     }
 
     void UpdateUI()
@@ -171,8 +195,16 @@ public class CarnholeManager : MonoBehaviour
         }
     }
 
-    public void Reset()
+    public void StartNewGame()
     {
+        Bag[] currentBags = FindObjectsOfType<Bag>();
+        if (currentBags != null)
+        {
+            foreach (Bag bag in currentBags)
+            {
+                Destroy(bag.gameObject);
+            }
+        }
         BagSpawner.Instance.SpawnBags();
         isPlayerOnesTurn = true;
         player1GoesFirst = true;
@@ -181,5 +213,6 @@ public class CarnholeManager : MonoBehaviour
         p1TotalScore = 0;
         p2TotalScore = 0;
         UpdateUI();
+        newGameButton.gameObject.SetActive(false);
     }
 }
