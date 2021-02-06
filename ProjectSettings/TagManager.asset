@@ -10,6 +10,8 @@ TagManager:
   - OnePoint
   - ThreePoints
   - NoPoints
+  - ResetThrow
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX

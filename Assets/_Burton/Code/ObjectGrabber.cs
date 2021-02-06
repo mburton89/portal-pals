@@ -5,12 +5,28 @@ using UnityEngine;
 public class ObjectGrabber : MonoBehaviour
 {
     private Collider _collider;
-    private GrabbableObject _potentialObject;
+    //private GrabbableObject _potentialObject;
+    private List<GrabbableObject> _potentialObjects;
     private GrabbableObject _grabbedObject;
+
+    [SerializeField] private HoldButton _holdButton;
 
     void Awake()
     {
         _collider = GetComponent<Collider>();
+        _potentialObjects = new List<GrabbableObject>();
+    }
+
+    private void OnEnable()
+    {
+        _holdButton.onPointerDown.AddListener(GrabObject);
+        _holdButton.onPointerUp.AddListener(FlingObject);
+    }
+
+    private void OnDisable()
+    {
+        _holdButton.onPointerDown.RemoveListener(GrabObject);
+        _holdButton.onPointerUp.RemoveListener(FlingObject);
     }
 
     void Update()
@@ -26,20 +42,12 @@ public class ObjectGrabber : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (_potentialObject != null)
-            {
-                _grabbedObject = _potentialObject;
-                _grabbedObject.Grab(this);
-            }
+            GrabObject();
         }
 
         else if (Input.GetKeyUp(KeyCode.E))
         {
-            if (_grabbedObject != null)
-            {
-                _grabbedObject.Fling();
-            }
-            Reset();
+            FlingObject();
         }
     }
 
@@ -47,21 +55,73 @@ public class ObjectGrabber : MonoBehaviour
     {
         if (other.GetComponent<GrabbableObject>())
         {
-            _potentialObject = other.GetComponent<GrabbableObject>();
+            //_potentialObject = other.GetComponent<GrabbableObject>();
+            _potentialObjects.Add(other.GetComponent<GrabbableObject>());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<GrabbableObject>() == _potentialObject)
+        //if (other.GetComponent<GrabbableObject>() == _potentialObject)
+        //{
+        //    //_potentialObject = null;
+        //}
+        if (_potentialObjects.Contains(other.GetComponent<GrabbableObject>()))
         {
-            _potentialObject = null;
+            _potentialObjects.Remove(other.GetComponent<GrabbableObject>());
         }
+    }
+
+    void GrabObject()
+    {
+        //if (_potentialObject != null)
+        //{
+        //    _grabbedObject = _potentialObject;
+        //    _grabbedObject.Grab(this);
+        //}
+        if (_potentialObjects != null && _potentialObjects.Count > 0)
+        {
+            GrabbableObject closestPotentialObject = null;
+            float closestDistanceFromObject = 0;
+            foreach (GrabbableObject potentialObject in _potentialObjects)
+            {
+                float distanceFromObject;
+                distanceFromObject = Mathf.Abs(potentialObject.transform.position.magnitude - transform.position.magnitude);
+                if (closestPotentialObject == null)
+                {
+                    closestDistanceFromObject = distanceFromObject;
+                    closestPotentialObject = potentialObject;
+                }
+                else
+                {
+                    if (distanceFromObject < closestDistanceFromObject)
+                    {
+                        closestPotentialObject = potentialObject;
+                        closestDistanceFromObject = distanceFromObject;
+                    }
+                }
+            }
+            _grabbedObject = closestPotentialObject;
+            _grabbedObject.Grab(this);
+        }
+    }
+
+    void FlingObject()
+    {
+        if (_grabbedObject != null)
+        {
+            _grabbedObject.Fling();
+        }
+        Reset();
     }
 
     public void Reset()
     {
-        _potentialObject = null;
+        //_potentialObject = null;
         _grabbedObject = null;
+        _potentialObjects.Clear();
+        _potentialObjects = new List<GrabbableObject>();
+        _collider.enabled = false;
+        _collider.enabled = true;
     }
 }

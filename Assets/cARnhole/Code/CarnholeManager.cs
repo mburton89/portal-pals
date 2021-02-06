@@ -179,10 +179,10 @@ public class CarnholeManager : MonoBehaviour
 
     void UpdateUI()
     {
-        p1RoundScoreText.SetText(p1RoundScore.ToString());
-        p2RoundScoreText.SetText(p2RoundScore.ToString());
-        p1TotalScoreText.SetText(p1TotalScore.ToString());
-        p2TotalScoreText.SetText(p2TotalScore.ToString());
+        p1RoundScoreText.SetText("Blue: " + p1RoundScore.ToString());
+        p2RoundScoreText.SetText("Red: " + p2RoundScore.ToString());
+        p1TotalScoreText.SetText("Blue: " + p1TotalScore.ToString());
+        p2TotalScoreText.SetText("Red: " + p2TotalScore.ToString());
         if (isPlayerOnesTurn)
         {
             player1Indicator.SetActive(true);
