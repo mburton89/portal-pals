@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectGrabber : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class ObjectGrabber : MonoBehaviour
     private List<GrabbableObject> _potentialObjects;
     private GrabbableObject _grabbedObject;
 
+    [SerializeField] private List<Sprite> _handSprites;
+    [SerializeField] private Image _hand;
+
     [SerializeField] private HoldButton _holdButton;
+
+    private GameObject _previouslyGrabbedObject;
 
     void Awake()
     {
@@ -40,12 +46,12 @@ public class ObjectGrabber : MonoBehaviour
             _collider.enabled = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
             GrabObject();
         }
 
-        else if (Input.GetKeyUp(KeyCode.E))
+        else if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
         {
             FlingObject();
         }
@@ -104,14 +110,38 @@ public class ObjectGrabber : MonoBehaviour
             _grabbedObject = closestPotentialObject;
             _grabbedObject.Grab(this);
         }
+
+        if (_grabbedObject != null && _grabbedObject.GetComponent<Dwarf>())
+        {
+            _grabbedObject.GetComponent<Dwarf>().PlayRandomGrabSound();
+        }
+
+        _hand.sprite = _handSprites[1];
     }
 
     void FlingObject()
     {
         if (_grabbedObject != null)
         {
+            if (_previouslyGrabbedObject != null)
+            {
+                Destroy(_previouslyGrabbedObject);
+            }
+            _previouslyGrabbedObject = _grabbedObject.gameObject;
+
+            if (_grabbedObject.GetComponent<Dwarf>())
+            {
+                _grabbedObject.GetComponent<Dwarf>().PlayRandomThrowSound();
+            }
+
             _grabbedObject.Fling();
+
+            if (NotadGameManager.Instance != null)
+            {
+                NotadGameManager.Instance.DelaySpawnDwarf();
+            }
         }
+        _hand.sprite = _handSprites[0];
         Reset();
     }
 
