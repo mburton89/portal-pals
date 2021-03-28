@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Burton/Scenes/ARDemo.unity
     guid: 9afb2a5f3ce8794459b46a5dc289377e
   - enabled: 0
@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Burton/Scenes/BoxChucker.unity
     guid: 8fb4fbe31c29b5345b83123aaeb56e5e
+  - enabled: 1
+    path: Assets/_Burton/Scenes/Amon Hen Main Menu.unity
+    guid: e76217116ea5cb946ade2d385974661b
+  - enabled: 1
+    path: Assets/_Burton/Scenes/Amon Hen.unity
+    guid: 8f965cf98eec834428a7fd40086f4068
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: ec4d59463e5d37f4c9985683a48a7ec7,
       type: 2}

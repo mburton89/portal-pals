@@ -100,6 +100,9 @@ public class GameOverMenu : MonoBehaviour
         maggotyBread3AudioSource.Play();
         yield return new WaitForSeconds(.5f);
         gameOverText.gameObject.SetActive(true);
+        gameOverText.transform.localScale = new Vector3(10, 10);
+        gameOverText.transform.DOScale(1, .15f);
+        yield return new WaitForSeconds(.15f);
         gameOverText.transform.DOShakeScale(.3f, 1, 10, 90, true);
         textAudioSource.Play();
 

@@ -31,6 +31,10 @@ public class Destructable : MonoBehaviour
         //    print(collision.gameObject.name);
         //    Splode();
         //}
+        if (collision.gameObject.GetComponent<Dwarf>())
+        {
+            Splode();
+        }
     }
 
     public void Splode()

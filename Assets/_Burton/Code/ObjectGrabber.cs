@@ -109,6 +109,7 @@ public class ObjectGrabber : MonoBehaviour
             }
             _grabbedObject = closestPotentialObject;
             _grabbedObject.Grab(this);
+            NotadGameManager.Instance.ActivateSpawnPlatform(false);
         }
 
         if (_grabbedObject != null && _grabbedObject.GetComponent<Dwarf>())

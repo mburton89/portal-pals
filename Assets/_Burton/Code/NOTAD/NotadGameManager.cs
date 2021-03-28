@@ -24,6 +24,8 @@ public class NotadGameManager : MonoBehaviour
 
     private bool _hasEndedSession = false;
 
+    public MeshCollider spawnPlatform;
+
     private void Awake()
     {
         Instance = this;
@@ -84,6 +86,7 @@ public class NotadGameManager : MonoBehaviour
     private IEnumerator DelaySpawnDwarfCo()
     {
         yield return new WaitForSeconds(2);
+        ActivateSpawnPlatform(true);
         SpawnDwarf();
     }
 
@@ -98,14 +101,9 @@ public class NotadGameManager : MonoBehaviour
         }
     }
 
-    void RestartLevel()
+    public void ActivateSpawnPlatform(bool shouldBeActive)
     {
-
-    }
-
-    void GoToNextLevel()
-    {
-
+        spawnPlatform.enabled = shouldBeActive;
     }
 
     void EndSession()
