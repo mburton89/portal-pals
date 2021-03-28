@@ -7,6 +7,8 @@ public class Orc : MonoBehaviour
     public List<AudioClip> audioClips;
     public AudioSource audioSource;
 
+    public List<AnimationState> animationStates;
+
     private void OnTriggerEnter(Collider other)
     {
     

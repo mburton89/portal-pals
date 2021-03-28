@@ -58,6 +58,7 @@ public class GameOverMenu : MonoBehaviour
     private IEnumerator ShowResults(int numberOfBreads)
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         isActive = true;
         yield return new WaitForSeconds(1);

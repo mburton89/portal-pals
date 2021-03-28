@@ -40,6 +40,7 @@ public class PauseMenuTwo : MonoBehaviour
         isActive = true;
         container.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
 
