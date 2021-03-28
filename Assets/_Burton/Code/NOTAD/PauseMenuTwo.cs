@@ -38,7 +38,10 @@ public class PauseMenuTwo : MonoBehaviour
 
     public void Activate()
     {
-        FindObjectOfType<RigidbodyFirstPersonController>().enabled = false;
+        if (FindObjectOfType<RigidbodyFirstPersonController>())
+        {
+            FindObjectOfType<RigidbodyFirstPersonController>().enabled = false;
+        }
         isActive = true;
         container.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
