@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameOverMenu : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class GameOverMenu : MonoBehaviour
 
     public Button mainMenuButton;
     public Button restartButton;
+    public Button nextLevelButton;
 
     [HideInInspector] public bool isActive;
 
@@ -42,12 +44,14 @@ public class GameOverMenu : MonoBehaviour
     {
         mainMenuButton.onClick.AddListener(GoToMainMenu);
         restartButton.onClick.AddListener(RestartLevel);
+        nextLevelButton.onClick.AddListener(GoToNextLevel);
     }
 
     private void OnDisable()
     {
         mainMenuButton.onClick.RemoveListener(GoToMainMenu);
         restartButton.onClick.RemoveListener(RestartLevel);
+        nextLevelButton.onClick.RemoveListener(GoToNextLevel);
     }
 
     public void Activate(int numberOfBreads)
@@ -69,6 +73,7 @@ public class GameOverMenu : MonoBehaviour
 
     private IEnumerator ShowResults(int numberOfBreads)
     {
+        FindObjectOfType<RigidbodyFirstPersonController>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -123,6 +128,11 @@ public class GameOverMenu : MonoBehaviour
         endgameAudioSource.Play();
         mainMenuButton.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
+
+        if (SceneManager.GetActiveScene().buildIndex != 6 && numberOfBreads > 0)
+        {
+            nextLevelButton.gameObject.SetActive(true);
+        }
     }
 
     void GoToMainMenu()
@@ -133,5 +143,10 @@ public class GameOverMenu : MonoBehaviour
     void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void GoToNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PauseMenuTwo : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class PauseMenuTwo : MonoBehaviour
 
     public void Activate()
     {
+        FindObjectOfType<RigidbodyFirstPersonController>().enabled = false;
         isActive = true;
         container.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
@@ -56,6 +58,7 @@ public class PauseMenuTwo : MonoBehaviour
 
     public void Resume()
     {
+        FindObjectOfType<RigidbodyFirstPersonController>().enabled = true;
         isActive = false;
         container.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;

@@ -15,6 +15,7 @@ public class NotadMainMenu : MonoBehaviour
     public Button level3Button;
     public Button level4Button;
     public Button level5Button;
+    public Button levelGoshButton;
 
     public List<GameObject> level1MaggotyBreads;
     public List<GameObject> level2MaggotyBreads;
@@ -28,6 +29,7 @@ public class NotadMainMenu : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        //PlayerPrefs.DeleteAll();
     }
 
     private void Start()
@@ -36,6 +38,7 @@ public class NotadMainMenu : MonoBehaviour
         level3Button.gameObject.SetActive(false);
         level4Button.gameObject.SetActive(false);
         level5Button.gameObject.SetActive(false);
+        levelGoshButton.gameObject.SetActive(false);
         DisplayLevelStatus();
         DisplayBreads();
 
@@ -44,8 +47,13 @@ public class NotadMainMenu : MonoBehaviour
         level3Button.onClick.AddListener(LoadLevel3);
         level4Button.onClick.AddListener(LoadLevel4);
         level5Button.onClick.AddListener(LoadLevel5);
+        levelGoshButton.onClick.AddListener(LoadLevelGosh);
 
         StartCoroutine(ShowTitle());
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     void DisplayLevelStatus()
@@ -105,6 +113,11 @@ public class NotadMainMenu : MonoBehaviour
                 level5MaggotyBreads[i].SetActive(true);
             }
         }
+
+        if (PlayerPrefs.GetInt("1") == 3 && PlayerPrefs.GetInt("2") == 3 && PlayerPrefs.GetInt("3") == 3 && PlayerPrefs.GetInt("4") == 3 && PlayerPrefs.GetInt("5") == 3)
+        {
+            levelGoshButton.gameObject.SetActive(true);
+        }
     }
 
     private IEnumerator ShowTitle()
@@ -122,4 +135,5 @@ public class NotadMainMenu : MonoBehaviour
     void LoadLevel3(){SceneManager.LoadScene(3);}
     void LoadLevel4(){SceneManager.LoadScene(4);}
     void LoadLevel5(){SceneManager.LoadScene(5);}
+    void LoadLevelGosh(){SceneManager.LoadScene(6);}
 }
