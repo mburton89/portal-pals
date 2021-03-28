@@ -78,17 +78,20 @@ public class GameOverMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         isActive = true;
-        yield return new WaitForSeconds(1);
 
         if (PauseMenuTwo.Instance.isActive)
         {
             PauseMenuTwo.Instance.Resume();
         }
-        
+
         container.SetActive(true);
 
+        yield return new WaitForSeconds(1);
 
-        yield return new WaitForSeconds(.5f);
+
+
+
+        //yield return new WaitForSeconds(.5f);
         if (numberOfBreads >= 1)
         {
             bread1.sprite = fullBread;

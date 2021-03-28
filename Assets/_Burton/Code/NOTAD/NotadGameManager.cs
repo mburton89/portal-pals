@@ -20,6 +20,7 @@ public class NotadGameManager : MonoBehaviour
     public int currentPoints;
 
     public List<AudioClip> audioClips;
+    public AudioClip spawnClip;
     public AudioSource audioSource;
 
     private bool _hasEndedSession = false;
@@ -40,6 +41,12 @@ public class NotadGameManager : MonoBehaviour
 
         audioSource.clip = audioClips[Random.Range(0, audioClips.Count)];
         audioSource.Play();
+
+        TextMeshPro[] texts = FindObjectsOfType<TextMeshPro>();
+        foreach (TextMeshPro text in texts)
+        {
+            text.raycastTarget = false;
+        }
     }
 
     private void Update()
@@ -69,12 +76,14 @@ public class NotadGameManager : MonoBehaviour
         if (dwarvesRemaining > 0)
         {
             Instantiate(dwarfPrefab, dwarfSpawnPoint.position, dwarfSpawnPoint.rotation, null);
+            audioSource.clip = spawnClip;
+            audioSource.Play();
             dwarvesRemaining--;
             UpdateUI();
         }
         else
         {
-            EndSession();
+            StartCoroutine(DelayEndSession());
         }
     }
 
@@ -130,5 +139,11 @@ public class NotadGameManager : MonoBehaviour
                 GameOverMenu.Instance.Activate(1);
             }
         }
+    }
+
+    private IEnumerator DelayEndSession()
+    {
+        yield return new WaitForSeconds(2);
+        EndSession();
     }
 }
