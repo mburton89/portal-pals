@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Destructable : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Destructable : MonoBehaviour
         //{
         //    Splode();
         //}
-        if (other.gameObject != gameObject)
+        if (other.gameObject != gameObject && !other.gameObject.GetComponent<RigidbodyFirstPersonController>() && !other.gameObject.GetComponent<ObjectGrabber>())
         {
             print(other.gameObject.name);
             Splode();

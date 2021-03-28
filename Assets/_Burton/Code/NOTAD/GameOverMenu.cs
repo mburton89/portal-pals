@@ -52,6 +52,18 @@ public class GameOverMenu : MonoBehaviour
 
     public void Activate(int numberOfBreads)
     {
+        if (numberOfBreads > 0)
+        {
+            int levelUnlocked = SceneManager.GetActiveScene().buildIndex + 1;
+            string levelUnlockedString = "level" + levelUnlocked;
+            PlayerPrefs.SetInt(levelUnlockedString, 1);
+        }
+
+        if (numberOfBreads > PlayerPrefs.GetInt(SceneManager.GetActiveScene().buildIndex.ToString()))
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().buildIndex.ToString(), numberOfBreads);
+        }
+
         StartCoroutine(ShowResults(numberOfBreads));
     }
 

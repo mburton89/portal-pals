@@ -5,33 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/_Burton/Scenes/ARDemo.unity
-    guid: 9afb2a5f3ce8794459b46a5dc289377e
-  - enabled: 0
-    path: Assets/_Becc/Scenes/TitleScreen.unity
-    guid: 886068b8826b57440b6a0c8d6e5a4212
-  - enabled: 0
-    path: Assets/_Burton/Scenes/BurtsLevel.unity
-    guid: 6ba014e41d77f6b41bca03c30468ea83
-  - enabled: 0
-    path: Assets/_Becc/Scenes/BeckLevel.unity
-    guid: 42b291152a3cca44a81a8f5257cde164
-  - enabled: 0
-    path: Assets/_Sean/Sean'sLevel.unity
-    guid: 7846371c79fab7c4b9e93a9335a1b993
-  - enabled: 0
-    path: Assets/_Aaron/Scenes/AaronS.unity
-    guid: 5131d1cd3f867634cb350f8215d435af
-  - enabled: 0
-    path: Assets/_Burton/Scenes/BoxChucker.unity
-    guid: 8fb4fbe31c29b5345b83123aaeb56e5e
   - enabled: 1
     path: Assets/_Burton/Scenes/Amon Hen Main Menu.unity
     guid: e76217116ea5cb946ade2d385974661b
   - enabled: 1
-    path: Assets/_Burton/Scenes/Amon Hen.unity
+    path: Assets/_Burton/Scenes/Amon Hen Level 1.unity
+    guid: 6660cc6bac42bce4bbce9f6f2d26bb90
+  - enabled: 1
+    path: Assets/_Burton/Scenes/Amon Hen Level 2.unity
     guid: 8f965cf98eec834428a7fd40086f4068
+  - enabled: 1
+    path: Assets/_Burton/Scenes/Amon Hen Level 3.unity
+    guid: 263ff033761e2f244bdf1127178e1c22
+  - enabled: 1
+    path: Assets/_Burton/Scenes/Amon Hen Level 4.unity
+    guid: fbfdca6c4b8f85d47806ef8fdd6770cc
+  - enabled: 1
+    path: Assets/_Burton/Scenes/Amon Hen Level 5.unity
+    guid: dbdfd124871394b44ab27644234bace0
+  - enabled: 1
+    path: Assets/_Burton/Scenes/Amon Hen Level GOSH.unity
+    guid: b8f962573f7a3a44ab2b4e5749c5f6f7
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: ec4d59463e5d37f4c9985683a48a7ec7,
       type: 2}
