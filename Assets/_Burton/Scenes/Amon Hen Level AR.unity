@@ -1503,7 +1503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62726869}
   m_LocalRotation: {x: 0, y: 0.26681787, z: 0, w: 0.963747}
-  m_LocalPosition: {x: -5.35, y: -1.57, z: -7.87}
+  m_LocalPosition: {x: -5.35, y: -1.3299984, z: -7.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1297697497}
@@ -9420,7 +9420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Orcs Remaining
+  m_text: 'Orcs:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c935ebae4cfe337419e2b95e6153f079, type: 2}
   m_sharedMaterial: {fileID: 409735053768016353, guid: c935ebae4cfe337419e2b95e6153f079,
@@ -9666,7 +9666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 607.6, y: -11.400024}
+  m_AnchoredPosition: {x: -13.890015, y: -11.400024}
   m_SizeDelta: {x: 900, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &751515242
@@ -9689,7 +9689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dwarves Remaining
+  m_text: 'Dwarves:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c935ebae4cfe337419e2b95e6153f079, type: 2}
   m_sharedMaterial: {fileID: 409735053768016353, guid: c935ebae4cfe337419e2b95e6153f079,
@@ -9724,7 +9724,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: -10
@@ -11258,7 +11258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887497619}
   m_LocalRotation: {x: -0, y: 0.98351943, z: -0, w: 0.18080248}
-  m_LocalPosition: {x: 0, y: -16.600002, z: 0}
+  m_LocalPosition: {x: 0, y: -16.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1493147816}
@@ -16593,7 +16593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321470415}
   m_LocalRotation: {x: -0, y: 0.98351943, z: -0, w: 0.18080248}
-  m_LocalPosition: {x: 0, y: -16.600002, z: 0}
+  m_LocalPosition: {x: 0, y: -16.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 596252435}

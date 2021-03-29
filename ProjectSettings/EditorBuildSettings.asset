@@ -6,24 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Burton/Scenes/Amon Hen Level AR.unity
+    guid: 4bd9ad725c3d30d41877bb57f9f979de
+  - enabled: 0
     path: Assets/_Burton/Scenes/Amon Hen Main Menu.unity
     guid: e76217116ea5cb946ade2d385974661b
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Burton/Scenes/Amon Hen Level 1.unity
     guid: 6660cc6bac42bce4bbce9f6f2d26bb90
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Burton/Scenes/Amon Hen Level 2.unity
     guid: 8f965cf98eec834428a7fd40086f4068
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Burton/Scenes/Amon Hen Level 3.unity
     guid: 263ff033761e2f244bdf1127178e1c22
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Burton/Scenes/Amon Hen Level 4.unity
     guid: fbfdca6c4b8f85d47806ef8fdd6770cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Burton/Scenes/Amon Hen Level 5.unity
     guid: dbdfd124871394b44ab27644234bace0
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Burton/Scenes/Amon Hen Level GOSH.unity
     guid: b8f962573f7a3a44ab2b4e5749c5f6f7
   m_configObjects:

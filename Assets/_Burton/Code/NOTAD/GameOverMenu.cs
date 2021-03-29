@@ -73,7 +73,10 @@ public class GameOverMenu : MonoBehaviour
 
     private IEnumerator ShowResults(int numberOfBreads)
     {
-        FindObjectOfType<RigidbodyFirstPersonController>().enabled = false;
+        if (FindObjectOfType<RigidbodyFirstPersonController>())
+        {
+            FindObjectOfType<RigidbodyFirstPersonController>().enabled = false;
+        }
         Cursor.lockState = CursorLockMode.None;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
