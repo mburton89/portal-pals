@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: BurtBot
-  productName: spARts
+  productName: No one Tosses a Dwarf
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -42,8 +42,8 @@ PlayerSettings:
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
-  defaultScreenWidth: 1024
-  defaultScreenHeight: 768
+  defaultScreenWidth: 1920
+  defaultScreenHeight: 1080
   defaultScreenWidthWeb: 1280
   defaultScreenHeightWeb: 720
   m_StereoRenderingPath: 0
@@ -68,7 +68,7 @@ PlayerSettings:
   androidRenderOutsideSafeArea: 1
   androidUseSwappy: 0
   androidBlitType: 0
-  defaultIsNativeResolution: 1
+  defaultIsNativeResolution: 0
   macRetinaSupport: 1
   runInBackground: 1
   captureSingleScreen: 0
@@ -128,7 +128,7 @@ PlayerSettings:
     Others: 1
   bundleVersion: 1.0
   preloadedAssets:
-  - {fileID: 11400000, guid: 9877f8f224782455bb401535f66b9ffa, type: 2}
+  - {fileID: 0}
   - {fileID: -2196694903826773005, guid: 28e01d9cf78fa438f908e66784513be1, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -172,7 +172,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier: {}
-  buildNumber: {}
+  buildNumber:
+    Standalone: 1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
@@ -274,7 +275,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 9bc38d5258f923c4aa3c0cd2d5a1c107, type: 3}
+      m_Icon: {fileID: 2800000, guid: a80b39f18e7b95d47a308c722e2cef27, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

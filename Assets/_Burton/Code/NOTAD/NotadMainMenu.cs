@@ -16,6 +16,9 @@ public class NotadMainMenu : MonoBehaviour
     public Button level4Button;
     public Button level5Button;
     public Button levelGoshButton;
+    public Button exitButton;
+    public Button musicButton;
+    public TextMeshProUGUI musicText;
 
     public List<GameObject> level1MaggotyBreads;
     public List<GameObject> level2MaggotyBreads;
@@ -47,6 +50,8 @@ public class NotadMainMenu : MonoBehaviour
         level3Button.onClick.AddListener(LoadLevel3);
         level4Button.onClick.AddListener(LoadLevel4);
         level5Button.onClick.AddListener(LoadLevel5);
+        exitButton.onClick.AddListener(ExitGame);
+        musicButton.onClick.AddListener(ToggleMusic);
         levelGoshButton.onClick.AddListener(LoadLevelGosh);
 
         StartCoroutine(ShowTitle());
@@ -130,10 +135,25 @@ public class NotadMainMenu : MonoBehaviour
         titleBlack.DOColor(Color.black, .25f);
     }
 
+    void ToggleMusic()
+    {
+        if (DontDestroy.Instance.music.volume > 0)
+        {
+            DontDestroy.Instance.music.volume = 0;
+            musicText.SetText("music: off");
+        }
+        else
+        {
+            DontDestroy.Instance.music.volume = 0.09f;
+            musicText.SetText("music: on");
+        }
+    }
+
     void LoadLevel1(){SceneManager.LoadScene(1);}
     void LoadLevel2(){SceneManager.LoadScene(2);}
     void LoadLevel3(){SceneManager.LoadScene(3);}
     void LoadLevel4(){SceneManager.LoadScene(4);}
     void LoadLevel5(){SceneManager.LoadScene(5);}
     void LoadLevelGosh(){SceneManager.LoadScene(6);}
+    void ExitGame(){ Application.Quit(); }
 }
