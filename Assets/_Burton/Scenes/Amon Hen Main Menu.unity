@@ -15012,7 +15012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: No one Tosses a Dwarf
+  m_text: Nobody Tosses a Dwarf
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e80af11add9b24e469d264c0c035bf14, type: 2}
   m_sharedMaterial: {fileID: 409735053768016353, guid: e80af11add9b24e469d264c0c035bf14,
@@ -33969,7 +33969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: No one Tosses a Dwarf
+  m_text: Nobody Tosses a Dwarf
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e80af11add9b24e469d264c0c035bf14, type: 2}
   m_sharedMaterial: {fileID: 409735053768016353, guid: e80af11add9b24e469d264c0c035bf14,
