@@ -17,6 +17,9 @@ public class ObjectGrabber : MonoBehaviour
 
     private GameObject _previouslyGrabbedObject;
 
+    public AudioSource grabAudio;
+    public AudioSource flingAudio;
+
     void Awake()
     {
         _collider = GetComponent<Collider>();
@@ -110,6 +113,7 @@ public class ObjectGrabber : MonoBehaviour
             _grabbedObject = closestPotentialObject;
             _grabbedObject.Grab(this);
             NotadGameManager.Instance.ActivateSpawnPlatform(false);
+            grabAudio.Play();
         }
 
         if (_grabbedObject != null && _grabbedObject.GetComponent<Dwarf>())
@@ -141,6 +145,8 @@ public class ObjectGrabber : MonoBehaviour
             {
                 NotadGameManager.Instance.DelaySpawnDwarf();
             }
+
+            flingAudio.Play();
         }
         _hand.sprite = _handSprites[0];
         Reset();

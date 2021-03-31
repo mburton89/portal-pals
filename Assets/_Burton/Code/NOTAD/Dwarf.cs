@@ -20,15 +20,15 @@ public class Dwarf : MonoBehaviour
         grabAudioSource.Play();
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (_canMakeThudSound)
-    //    {
-    //        print("hi");
-    //        thudSound.Play();
-    //        _canMakeThudSound = false;
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_canMakeThudSound)
+        {
+            print("hi");
+            thudSound.Play();
+            _canMakeThudSound = false;
+        }
+    }
 
     public void HandleGrab()
     {

@@ -277,9 +277,9 @@ MonoBehaviour:
   textAudioSource: {fileID: 7577902207480269063}
   endgameAudioClips:
   - {fileID: 8300000, guid: 0148f6d7f527b3b479477400882d74c9, type: 3}
-  - {fileID: 8300000, guid: 01223e75a15f6154ebd8cc01b665efcb, type: 3}
-  - {fileID: 8300000, guid: f4538a6c29e73434c81c6b1cfb81a93d, type: 3}
-  - {fileID: 8300000, guid: 9be2dd19ef7a48f4f9754cd18bceeec8, type: 3}
+  - {fileID: 8300000, guid: 91b1f73ca1856454c860744ff63ef628, type: 3}
+  - {fileID: 8300000, guid: e689cd05ee6c7704a9879b0961510ccc, type: 3}
+  - {fileID: 8300000, guid: 95a00e2aa76b7d443b0be5f5c2a965ed, type: 3}
   endgameAudioSource: {fileID: 7577902208836857694}
 --- !u!1 &7577902207710372721
 GameObject:
