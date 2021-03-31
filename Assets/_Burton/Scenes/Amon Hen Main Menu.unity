@@ -38039,6 +38039,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dwarf
       objectReference: {fileID: 0}
+    - target: {fileID: 4839407610244948628, guid: ebd3b11de7a02a74cae2d6341bb8801d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4839407610244948629, guid: ebd3b11de7a02a74cae2d6341bb8801d,
         type: 3}
       propertyPath: m_RootOrder
